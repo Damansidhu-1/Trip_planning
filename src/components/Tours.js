@@ -12,7 +12,9 @@ function Tours({tours , removeTour}) {
                     // and tours has 7 city o it will call card for 7 times
                     // ...tours says that pure object di copy pass krti (cloning)
                     tours.map( (tour) => {
-                        return <Card {...tour} removeTour={removeTour}></Card>
+                        // jdo vi list teh map launa then always pass a key of unique identifier
+                        // if not any unique identifier then pass key
+                        return <Card key={tour.id} {...tour} removeTour={removeTour}></Card>
                     })
                 }
             </div>
